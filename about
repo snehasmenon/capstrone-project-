@@ -1,0 +1,36 @@
+A customer satisfaction dataset serves as a comprehensive repository of information capturing 
+the nuances and intricacies of customer experiences with our products and services. We obtained 
+the data from Kaggle datasets and the data could be an anonymized real airline data not revealing 
+the name of the airline.
+This dataset is a strategic asset that goes beyond numerical ratings, delving into the qualitative 
+aspects of customer sentiments, preferences, and interactions. The dataset has the dimension 
+(129880 rows, 25 columns). We split the data into Training dataset and test dataset in the ratio 
+80% and 20%. By meticulously analysing this data, we aim to gain valuable insights into the 
+factors influencing satisfaction, identify areas for improvement, and enhance the overall 
+customer journey.
+The target variable, Satisfaction has two levels 0 representing “Neutral or dissatisfied” and 1 
+representing “Satisfied” passengers. The count and percentage of these two classes are: (73452, 
+56.55%) and (56428, 43.45%) indicating a slight data imbalance. We have applied Synthetic 
+Minority Over-sampling Technique (SMOTE) to treat the data imbalance.
+Null values are present in the dataset. The variable, ‘Arrival Delay in Minutes’ has 310 missing 
+values constituting 2.98% of the total observations. Multiple Imputation by Chained Equation 
+technique was adopted to treat missing values.
+We have used classification techniques to predict the outcome of the target variable which is a 
+categorical variable. We have used Logistic Regression as our base model and the following too:
+1. K-Nearest Neighbour (KNN) classifier
+2. Gaussian Naive Bayes classifier
+3. Decision Tree classifier
+4. Random Forest classifier
+5. ADABOOST classifier
+6. Gradient Boost classifier
+7. XGBoost classifier
+Since the dataset is not exactly balanced, we shall consider weighted Average-F1 score as the 
+measures to evaluate the performance of the models and to select the best model.
+Our best model is XGBoost Classifier with weighted Average F1 being 96.7% for training 
+dataset and 96.1% for test dataset.
+Comparing the best model with base model using the performance measure: Weighted Average 
+F1 Score
+Model Measure for training dataset Measure for test dataset
+LOGISTIC REGRESSION 0.79 0.79
+XGBOOST CLASSIFIER 0.967 0.961
+ Table 1 Comparison of performance of benchmark mark model with best model
